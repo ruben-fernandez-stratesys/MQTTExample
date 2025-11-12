@@ -9,6 +9,7 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <main.class>cat.tmb.mqtt.App</main.class>
   </properties>
 
   <dependencies>
@@ -43,6 +44,18 @@
           <target>${maven.compiler.target}</target>
         </configuration>
       </plugin>
+      
+      
+<!-- Run via: mvn -q exec:java -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <mainClass>${main.class}</mainClass>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 
